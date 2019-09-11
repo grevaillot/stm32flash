@@ -831,7 +831,7 @@ static stm32_err_t stm32_pages_erase(const stm32_t *stm, uint32_t spage, uint32_
 	/* 0x44 is Extended Erase, a 2 byte based protocol and needs to be handled differently. */
 	/* 0x45 is clock no-stretching version of Extended Erase for I2C port. */
 	if (stm32_send_command(stm, stm->cmd->er) != STM32_ERR_OK) {
-		fprintf(stderr, "Can't initiate chip mass erase!\n");
+		fprintf(stderr, "Can't initiate chip page erase!\n");
 		return STM32_ERR_UNKNOWN;
 	}
 
